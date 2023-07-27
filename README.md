@@ -4,7 +4,7 @@ This is a very simple script to help facilitate some post-install steps.
 
 ## Usage
 
-1. Run the script `./kionite-setup.sh`
+1. Run the script `./setup.sh`
 
 ## Files
 
