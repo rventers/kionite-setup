@@ -1,5 +1,8 @@
+com.atlauncher.ATLauncher
 com.github.tchx84.Flatseal
 com.valvesoftware.Steam
+io.openrct2.OpenRCT2
 net.davidotek.pupgui2
 net.lutris.Lutris
 org.gnome.DejaDup
+org.signal.Signal
