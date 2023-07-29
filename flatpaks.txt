@@ -1,6 +1,0 @@
-com.atlauncher.ATLauncher
-com.github.tchx84.Flatseal
-io.openrct2.OpenRCT2
-org.freedesktop.Platform.ffmpeg-full//22.08
-org.gnome.DejaDup
-org.signal.Signal
