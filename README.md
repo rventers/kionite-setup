@@ -30,7 +30,7 @@ This is a very simple script to help facilitate some post-install steps.
   - Installs Flatpak packages defined in the `flatpak-packages.txt` file.
 
 ### Install Distrobox (bazzite-arch)
-- Installs [Distrobox](https://github.com/89luca89/distrobox).
+- Installs [Distrobox](https://github.com/89luca89/distrobox) to `~/.local`.
 - Downloads the [bazzite-arch](https://github.com/ublue-os/bazzite-arch) image.
 - Creates app and bin shortcuts from the container.
 
