@@ -3,6 +3,7 @@
 PS3="Select an option: "
 OPTIONS=(
 	"Set Hostname"
+	"Upgrade System"
 	"Remove Firefox RPMs"
 	"Install Flatpaks"
 	"Install Distrobox (bazzite-arch)"
@@ -12,6 +13,7 @@ OPTIONS=(
 
 function all-options() {
 	setup-hostname
+	upgrade-system
 	remove-firefox
 	setup-flatpaks
 	setup-distrobox
@@ -58,6 +60,12 @@ function steam-input() {
         echo ""
 }
 
+function upgrade-system() {
+	echo -e "\nUpgrading system..."
+	rpm-ostree upgrade
+	echo ""
+}
+
 clear
 while true
 do
@@ -65,11 +73,12 @@ do
 	do
 		case $REPLY in
 			1) setup-hostname; break;;
-			2) remove-firefox; break;;
-			3) setup-flatpaks; break;;
-			4) setup-distrobox; break;;
-			5) steam-input; break;;
-			6) all-options; break;;
+			2) upgrade-system; break;;
+			3) remove-firefox; break;;
+			4) setup-flatpaks; break;;
+			5) setup-distrobox; break;;
+			6) steam-input; break;;
+			7) all-options; break 2;;
 			$((${#OPTIONS[@]}+1))) break 2;;
 			*) echo "Invalid option: $REPLY"; break;;
 		esac
