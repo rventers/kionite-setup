@@ -5,7 +5,8 @@ OPTIONS=(
 	"Set Hostname"
 	"Remove Firefox RPMs"
 	"Install Flatpaks"
-	"Steam Input Rules"
+	"Install Distrobox (bazzite-arch)"
+	"Install Steam Input Rules"
 	"All Options"
 )
 
@@ -13,12 +14,23 @@ function all-options() {
 	setup-hostname
 	remove-firefox
 	setup-flatpaks
+	setup-distrobox
 	steam-input
 }
 
 function remove-firefox() {
 	echo -e "\nRemoving Firefox RPMs..."
 	rpm-ostree override remove firefox firefox-langpacks
+	echo ""
+}
+
+function setup-distrobox() {
+	echo -e "\nSetting up Distrobox"
+	curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
+	distrobox create -i ghcr.io/ublue-os/bazzite-arch -n bazzite-arch -Y
+	for APP in lutris protontricks steam; do
+		distrobox enter -n bazzite-arch -- "distrobox-export --app $APP"
+	done
 	echo ""
 }
 
@@ -43,7 +55,7 @@ function setup-hostname() {
 function steam-input() {
         echo -e "\nAdding Steam input rules..."
         sudo wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
-        setup-hostnameecho ""
+        echo ""
 }
 
 clear
@@ -55,8 +67,9 @@ do
 			1) setup-hostname; break;;
 			2) remove-firefox; break;;
 			3) setup-flatpaks; break;;
-			4) steam-input; break;;
-			5) all-options; break;;
+			4) setup-distrobox; break;;
+			5) steam-input; break;;
+			6) all-options; break;;
 			$((${#OPTIONS[@]}+1))) break 2;;
 			*) echo "Invalid option: $REPLY"; break;;
 		esac
