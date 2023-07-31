@@ -32,6 +32,7 @@ function setup-distrobox() {
 	distrobox create -i ghcr.io/ublue-os/bazzite-arch -n bazzite-arch -Y
 	for APP in lutris protontricks steam; do
 		distrobox enter -n bazzite-arch -- "distrobox-export --app $APP"
+  		distrobox enter -n bazzite-arch -- "distrobox-export --bin /usr/sbin/$APP"
 	done
 	echo ""
 }
