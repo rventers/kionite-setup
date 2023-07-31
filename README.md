@@ -16,14 +16,24 @@ This is a very simple script to help facilitate some post-install steps.
 ### Set Hostname
   - Prompts and sets the machine hostname.
 
-### Install RPMs
-  - Installs RPM packages defined in the `rpm-packages.txt` file.
-  > Packages are installed via `rpm-ostree` and will require a reboot before packages are enabled.
+### Upgrade System
+  - Runs `rpm-ostree upgrade` to install any available upgrades.
+  > Running `rpm-ostree` will require a reboot.
+
+### Remove Firefox RPMs
+- Removes `firefox` and `firefox-lang` RPMs from the system.
+- Will be replaced a Flatpak browser as specified in `flatpaks.txt`.
+> Running `rpm-ostree` will require a reboot.
 
 ### Install Flatpaks
   - Adds the Flathub repo if it is missing.
   - Installs Flatpak packages defined in the `flatpak-packages.txt` file.
 
+### Install Distrobox (bazzite-arch)
+- Installs [Distrobox](https://github.com/89luca89/distrobox).
+- Downloads the [bazzite-arch](https://github.com/ublue-os/bazzite-arch) image.
+- Creates app and bin shortcuts from the container.
+
 ### Steam Input Rules
   - Downloads the `60-steam-input.rules` file from the ValveSoftware steam-devices Github repo.
-  > Device rules will require a reboot before they are enabled.
+  > Device rules will require a reboot to be enabled.
