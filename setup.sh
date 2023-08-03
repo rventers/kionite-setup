@@ -16,6 +16,19 @@ function all-options() {
 	upgrade-system
 	setup-flatpaks
 	steam-input
+ 	reboot-system
+}
+
+function reboot-system() {
+ 	while true; do
+  		echo ""
+ 		read -p "Do you want to reboot now? (y/n) " yn
+  		case $yn in
+   			[Yy]*) systemctl reboot; exit;;
+     			[Nn]*) break;;
+       			*) echo "Please answer yes or no";;
+	 	esac
+   	done
 }
 
 function remove-firefox() {
