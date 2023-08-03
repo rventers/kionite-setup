@@ -6,6 +6,7 @@ io.openrct2.OpenRCT2
 net.davidotek.pupgui2
 net.lutris.Lutris
 org.gnome.DejaDup
+org.kde.kwrite
 org.mozilla.firefox
 org.freedesktop.Platform.ffmpeg-full//22.08
 org.signal.Signal
