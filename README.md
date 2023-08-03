@@ -29,11 +29,6 @@ This is a very simple script to help facilitate some post-install steps.
   - Adds the Flathub repo if it is missing.
   - Installs Flatpak packages defined in the `flatpak-packages.txt` file.
 
-### Install Distrobox (bazzite-arch)
-- Installs [Distrobox](https://github.com/89luca89/distrobox) to `~/.local`.
-- Downloads the [bazzite-arch](https://github.com/ublue-os/bazzite-arch) image.
-- Creates app and bin shortcuts from the container.
-
 ### Steam Input Rules
   - Downloads the `60-steam-input.rules` file from the ValveSoftware steam-devices Github repo.
   > Device rules will require a reboot to be enabled.
