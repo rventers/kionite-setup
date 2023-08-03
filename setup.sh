@@ -45,6 +45,11 @@ function setup-flatpaks() {
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	echo -e "\nInstalling flatpaks..."
 	flatpak install --assumeyes flathub $(cat flatpaks.txt)
+ 	echo -e "\nSetting background permissions..."
+ 	for FP in $(cat flatpaks.txt)
+  	do 
+   		flatpak permission-set background background $FP yes
+     	done
 	echo ""
 }
 
