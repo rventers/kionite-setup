@@ -1,7 +1,10 @@
 com.atlauncher.ATLauncher
 com.github.tchx84.Flatseal
+com.valvesoftware.Steam
+gg.minion.Minion
 io.openrct2.OpenRCT2
 net.davidotek.pupgui2
+net.lutris.Lutris
 org.gnome.DejaDup
 org.mozilla.firefox
 org.freedesktop.Platform.ffmpeg-full//22.08
