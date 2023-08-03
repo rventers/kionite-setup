@@ -3,8 +3,8 @@
 PS3="Select an option: "
 OPTIONS=(
 	"Set Hostname"
+ 	"Remove Firefox RPMs"
 	"Upgrade System"
-	"Remove Firefox RPMs"
 	"Install Flatpaks"
 	"Install Steam Input Rules"
 	"All Options"
@@ -12,8 +12,8 @@ OPTIONS=(
 
 function all-options() {
 	setup-hostname
+ 	remove-firefox
 	upgrade-system
-	remove-firefox
 	setup-flatpaks
 	steam-input
 }
@@ -61,8 +61,8 @@ do
 	do
 		case $REPLY in
 			1) setup-hostname; break;;
-			2) upgrade-system; break;;
-			3) remove-firefox; break;;
+			2) remove-firefox; break;;
+			3) upgrade-system; break;;
 			4) setup-flatpaks; break;;
 			5) steam-input; break;;
 			6) all-options; break 2;;
